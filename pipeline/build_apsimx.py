@@ -1,8 +1,14 @@
 """Stage 3: patch APSIM rice template (clock, weather, sowing) -> ClimSmart-Rice.apsimx"""
-import json,urllib.request,datetime as dt,pathlib
+import json,glob,shutil,datetime as dt,pathlib
 R=pathlib.Path(__file__).parent.parent;cfg=json.load(open(R/'config/config.json'));W=json.load(open(R/'work/weather.json'))
 t=R/'work/template.apsimx'
-if not t.exists():urllib.request.urlretrieve(cfg['template_url'],t)
+own=R/'assets/template/Rice.apsimx'
+if own.exists():shutil.copy(own,t)
+else:
+    c=[p for p in glob.glob('/tmp/apsim/src/**/*.apsimx',recursive=True) if 'rice' in p.lower()]
+    c.sort(key=lambda p:(not p.lower().endswith('/rice.apsimx'),len(p)));print('template candidates:',*c,sep='\n  ')
+    if not c:raise SystemExit('No rice template found: put one at assets/template/Rice.apsimx')
+    shutil.copy(c[0],t);print('using',c[0])
 m=json.load(open(t))
 s=dt.date.fromisoformat(W[0]['date']);e=min(dt.date.fromisoformat(cfg['sowing_date'])+dt.timedelta(days=cfg['duration_days']),dt.date.fromisoformat(W[-1]['date']))
 def walk(n):

@@ -1,7 +1,7 @@
 """Stage 7: rule-based N-timing advisory (leaching/runoff risk from rain after application)"""
 import json,datetime as dt,pathlib
 R=pathlib.Path(__file__).parent.parent;D=R/'docs/data';cfg=json.load(open(R/'config/config.json'));W=json.load(open(D/'weather.json'))
-rain={w['date']:w['rain'] for w in W};hz=dt.date.fromisoformat(W[-1]['date']);today=dt.date.today()
+rain={w['date']:w['rain'] for w in W};hz=dt.date.fromisoformat(max(w['date'] for w in W if w.get('f',1)));today=dt.date.today()
 def r(d,n):return sum(rain.get((d+dt.timedelta(i)).isoformat(),0) for i in range(n))
 def risk(a,b):return 'HIGH' if a>=25 or b>=40 else 'MODERATE' if a>=10 or b>=25 else 'LOW'
 sow=dt.date.fromisoformat(cfg['sowing_date']);rows=[]

@@ -29,6 +29,9 @@ jobs:
 
       - run: pip install -r pipeline/requirements.txt
 
+      - name: 0 Clone APSIM source
+        run: git clone --depth 1 https://github.com/APSIMInitiative/ApsimX.git /tmp/apsim/src
+
       - name: 1-2 Fetch Open-Meteo and build .met
         run: python pipeline/fetch_weather.py
 
@@ -44,7 +47,6 @@ jobs:
       - name: 4 Build APSIM Next Gen
         run: |
           if [ ! -f /tmp/apsim/out/Models.dll ]; then
-            git clone --depth 1 https://github.com/APSIMInitiative/ApsimX.git /tmp/apsim/src
             dotnet build /tmp/apsim/src/Models/Models.csproj -c Release -o /tmp/apsim/out
           fi
 
