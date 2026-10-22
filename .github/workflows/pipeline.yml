@@ -1,0 +1,35 @@
+name: ClimSmart-Rice pipeline
+on:
+  workflow_dispatch:
+  push: {paths: ['assets/polygon.geojson','config/**','pipeline/**']}
+  schedule: [{cron: '0 21 * * *'}]
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: '8.0.x'}
+      - run: pip install -r pipeline/requirements.txt
+      - name: 1-2 Fetch Open-Meteo -> .met
+        run: python pipeline/fetch_weather.py
+      - name: 3 Build .apsimx
+        run: python pipeline/build_apsimx.py
+      - uses: actions/cache@v4
+        with: {path: /tmp/apsim/out, key: apsim-${{ runner.os }}-v1}
+      - name: 4 Build APSIM Next Gen
+        run: |
+          [ -f /tmp/apsim/out/Models.dll ] || { git clone --depth 1 https://github.com/APSIMInitiative/ApsimX.git /tmp/apsim/src && dotnet build /tmp/apsim/src/Models/Models.csproj -c Release -o /tmp/apsim/out; }
+      - name: 5 Run simulation
+        run: cd work && dotnet /tmp/apsim/out/Models.dll ClimSmart-Rice.apsimx
+      - name: 6-7 Export + advisory
+        run: python pipeline/export_results.py && python pipeline/advisory.py
+      - uses: actions/upload-artifact@v4
+        with: {name: apsim-run, path: work/}
+      - name: Commit results
+        run: |
+          git config user.name climsmart-bot; git config user.email bot@users.noreply.github.com
+          git add docs/data; git diff --cached --quiet || git commit -m "pipeline: update results"; git push
