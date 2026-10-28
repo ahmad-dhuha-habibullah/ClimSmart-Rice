@@ -4,12 +4,12 @@
    "stage": "Basal",
    "kg_n": 40,
    "target": "2026-11-01",
-   "best": "2026-11-01",
-   "rain48": 7.1,
-   "rain72": 13.1,
-   "risk": "LOW",
+   "best": "2026-10-30",
+   "rain48": 10.2,
+   "rain72": 18.3,
+   "risk": "MODERATE",
    "status": "FORECAST",
-   "action": "Apply"
+   "action": "Split dose / delay"
   },
   {
    "stage": "Active tillering",
@@ -36,83 +36,78 @@
  ],
  "daily": [
   {
-   "date": "2026-10-27",
-   "rain": 3.4,
-   "risk": "MODERATE"
-  },
-  {
    "date": "2026-10-28",
-   "rain": 12.3,
+   "rain": 30.5,
    "risk": "HIGH"
   },
   {
    "date": "2026-10-29",
-   "rain": 19.3,
+   "rain": 17.3,
    "risk": "MODERATE"
   },
   {
    "date": "2026-10-30",
-   "rain": 2.8,
+   "rain": 3.9,
    "risk": "MODERATE"
   },
   {
    "date": "2026-10-31",
-   "rain": 8.4,
+   "rain": 6.3,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-01",
-   "rain": 1.7,
-   "risk": "LOW"
+   "rain": 8.1,
+   "risk": "MODERATE"
   },
   {
    "date": "2026-11-02",
-   "rain": 5.4,
+   "rain": 4.8,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-03",
-   "rain": 6.0,
+   "rain": 8.4,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-04",
-   "rain": 7.2,
+   "rain": 13.2,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-05",
-   "rain": 5.4,
+   "rain": 7.8,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-06",
-   "rain": 8.8,
+   "rain": 10.8,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-07",
-   "rain": 15.4,
-   "risk": "MODERATE"
+   "rain": 7.0,
+   "risk": "HIGH"
   },
   {
    "date": "2026-11-08",
-   "rain": 7.6,
-   "risk": "MODERATE"
+   "rain": 18.2,
+   "risk": "HIGH"
   },
   {
    "date": "2026-11-09",
-   "rain": 5.4,
+   "rain": 6.0,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-10",
-   "rain": 16.65,
+   "rain": 16.0,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-11",
-   "rain": 10.3,
+   "rain": 9.65,
    "risk": "HIGH"
   },
   {
