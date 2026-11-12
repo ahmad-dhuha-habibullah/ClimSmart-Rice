@@ -15,9 +15,9 @@
    "stage": "Active tillering",
    "kg_n": 40,
    "target": "2026-11-22",
-   "best": "2026-11-21",
-   "rain48": 16.6,
-   "rain72": 34.2,
+   "best": "2026-11-25",
+   "rain48": 17.0,
+   "rain72": 22.5,
    "risk": "MODERATE",
    "status": "FORECAST",
    "action": "Split dose / delay"
@@ -36,93 +36,83 @@
  ],
  "daily": [
   {
-   "date": "2026-11-10",
-   "rain": 4.3,
-   "risk": "MODERATE"
-  },
-  {
-   "date": "2026-11-11",
-   "rain": 13.3,
-   "risk": "MODERATE"
-  },
-  {
    "date": "2026-11-12",
-   "rain": 4.4,
-   "risk": "MODERATE"
+   "rain": 13.6,
+   "risk": "HIGH"
   },
   {
    "date": "2026-11-13",
-   "rain": 17.6,
+   "rain": 11.7,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-14",
-   "rain": 12.0,
-   "risk": "MODERATE"
+   "rain": 21.0,
+   "risk": "HIGH"
   },
   {
    "date": "2026-11-15",
-   "rain": 4.5,
-   "risk": "LOW"
+   "rain": 6.8,
+   "risk": "HIGH"
   },
   {
    "date": "2026-11-16",
-   "rain": 4.8,
+   "rain": 37.0,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-17",
-   "rain": 14.8,
+   "rain": 17.9,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-18",
-   "rain": 35.2,
+   "rain": 16.0,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-19",
-   "rain": 17.0,
+   "rain": 22.2,
    "risk": "HIGH"
   },
   {
    "date": "2026-11-20",
-   "rain": 18.8,
-   "risk": "HIGH"
+   "rain": 12.8,
+   "risk": "MODERATE"
   },
   {
    "date": "2026-11-21",
-   "rain": 8.8,
+   "rain": 10.8,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-22",
-   "rain": 7.8,
-   "risk": "HIGH"
+   "rain": 9.6,
+   "risk": "MODERATE"
   },
   {
    "date": "2026-11-23",
-   "rain": 17.6,
-   "risk": "HIGH"
+   "rain": 9.0,
+   "risk": "MODERATE"
   },
   {
    "date": "2026-11-24",
-   "rain": 14.55,
+   "rain": 11.4,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-25",
-   "rain": 0.7,
+   "rain": 11.2,
    "risk": "MODERATE"
   },
   {
    "date": "2026-11-26",
-   "rain": 16.166666666666668,
-   "risk": "HIGH"
+   "rain": 5.8,
+   "risk": "MODERATE"
   },
   {
    "date": "2026-11-27",
-   "rain": 15.299999999999999,
+   "rain": 5.5,
    "risk": "MODERATE"
   },
   {
